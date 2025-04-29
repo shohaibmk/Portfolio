@@ -13,12 +13,13 @@ const Landing = () => {
                         alt="Shohaib Mallick"
                         width={180}
                         height={180}
-                        className="rounded-full w-32 h-32 md:w-48 md:h-48"
+                        className="rounded-full w-32 h-32 md:w-48 md:h-48 border-1 border-gray-300 shadow-lg shadow-gray-500/50"
                         priority
+
                     />
                 </div>
 
-                <div className="max-w-2xl mx-auto">
+                <div className="max-w-2xl lg:mx-32">
                     <div id="name" className="space-y-1 md:space-y-2">
                         <h1 className="text-3xl md:text-4xl font-bold flex flex-row md:flex-row items-center gap-2">
                             <span>Hi, I'm Shohaib Mallick</span>
@@ -35,17 +36,25 @@ const Landing = () => {
                             href="https://res.cloudinary.com/dbqwc4btc/image/upload/v1745868259/Shohaib_Mallick_Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto text-center bg-black text-white px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
+                            className="w-full sm:w-auto text-center bg-black text-white px-4 py-2 rounded-md hover:bg-black/95 hover:shadow-lg hover:shadow-black/30 transition duration-300"
                         >
-                            View Resume
+                            Resume
                         </a>
                         <a
                             href="https://www.linkedin.com/in/shohaibmk/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto text-center bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300"
+                            className="w-full sm:w-auto text-center bg-[#0a66c2] text-white px-4 py-2 rounded-md hover:bg-[#0a66c2]/95 hover:shadow-lg hover:shadow-[#0a66c2]/30 transition duration-300"
                         >
-                            View LinkedIn
+                            LinkedIn
+                        </a>
+                        <a
+                            href="https://github.com/shohaibmk"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto text-center bg-[#08872B] text-white px-4 py-2 rounded-md hover:bg-[#08872B]/95 hover:shadow-lg hover:shadow-[#08872B]/30 transition duration-300"
+                        >
+                            GitHub
                         </a>
                     </div>
                 </div>
