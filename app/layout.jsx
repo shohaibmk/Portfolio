@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Shohaib Mallick | Portfolio",
   description: "Shohaib's Personal Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
-
-
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
-
+        className={`antialiased ${geistSans.variable} ${geistMono.variable}`}
       >
         {children}
       </body>
