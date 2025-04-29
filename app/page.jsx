@@ -1,7 +1,7 @@
-import ScrollLinked from "./PageProgress.jsx";
-import AboutMe from "./AboutMe.jsx";
-import Education from "./Education.jsx";
-import Experience from "./Experience.jsx";
+import ScrollLinked from "./pageProgress.jsx";
+import AboutMe from "./aboutMe.jsx";
+import Education from "./education.jsx";
+import Experience from "./experience.jsx";
 
 export default function Home() {
   return (

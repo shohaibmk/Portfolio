@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import SkillButton from './components/SkillButton';
+import SkillButton from './components/skillButton';
 import { skills } from './data/skills';
 
 // Landing component
