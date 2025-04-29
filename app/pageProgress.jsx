@@ -1,6 +1,6 @@
 "use client"
 
-import Landing from "./Landing"
+import Landing from "./Landing.jsx"
 import { motion, useSpring, useScroll } from "motion/react"
 
 export default function ScrollLinked() {
