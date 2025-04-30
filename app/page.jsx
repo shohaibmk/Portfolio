@@ -1,8 +1,10 @@
-import ScrollLinked from "./pageProgress.jsx";
-import AboutMe from "./aboutMe.jsx";
-import Education from "./education.jsx";
-import Experience from "./experience.jsx";
-import Research from "./research.jsx";
+import ScrollLinked from "./components/pageProgress.jsx";
+import AboutMe from "./components/aboutMe.jsx";
+import Education from "./components/education.jsx";
+import Experience from "./components/experience.jsx";
+import Research from "./components/research.jsx";
+import Contact from "./components/contact.jsx";
+import Footer from "./components/footer.jsx";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
         <Education />
       </div>
       <Research />
+      <Contact />
+      <Footer />
     </div>
   );
 }

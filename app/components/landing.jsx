@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import SkillButton from './components/skillButton';
-import { skills } from './data/skills';
+import SkillButton from './skillButton';
+import { skills } from '../data/skills';
 
 // Landing component
 const Landing = () => {
     return (
-        <div className="px-4">
+        <div className="px-8">
             <div className="flex flex-col md:flex-row items-center justify-center py-8 md:py-10 gap-8">
                 <div className="mb-4 md:mb-8">
                     <Image
@@ -22,7 +22,7 @@ const Landing = () => {
                 <div className="max-w-2xl lg:mx-32">
                     <div id="name" className="space-y-1 md:space-y-2">
                         <h1 className="text-3xl md:text-4xl font-bold flex flex-row md:flex-row items-center gap-2">
-                            <span>Hi, I'm Shohaib Mallick</span>
+                            <span className="w-full">Hey, I'm Shohaib Mallick</span>
                             <span className="relative flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>

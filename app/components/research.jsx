@@ -6,7 +6,7 @@ const PublicationCard = ({ publication }) => {
     return (
         <div className={className}>
             <a href={citationLink} target="_blank" rel="noopener noreferrer">
-                <h2 className="text-xl font-semibold hover:underline w-max">{title}</h2>
+                <h2 className="text-xl font-semibold hover:underline">{title}</h2>
             </a>
             <p className="text-sm text-gray-800 font-bold">
                 {journal} {date && `· ${date}`} <br />
@@ -38,8 +38,8 @@ function Research() {
         },
         {
             title: "Proposed Model of Speech Recognition using MFCC and DNN",
-            journal: "International Journal of Engineering Research & Technology (IJERT)",
-            date: "May 10, 2020",
+            journal: "International Journal of Engineering Research & Technology (IJERT) · May 10, 2020 · Vol 9 · Issue 5",
+            // date: "May 10, 2020",
             citationLink: "https://www.ijert.org/proposed-model-of-speech-recognition-using-mfcc-and-dnn",
             paperLink: "https://www.ijert.org/research/proposed-model-of-speech-recognition-using-mfcc-and-dnn-IJERTV9IS050421.pdf",
             keyPoints: [
