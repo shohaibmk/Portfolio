@@ -5,6 +5,7 @@ import Experience from "./components/experience.jsx";
 import Research from "./components/research.jsx";
 import Contact from "./components/contact.jsx";
 import Footer from "./components/footer.jsx";
+import Projects from "./components/projects.jsx";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Experience />
         <Education />
       </div>
+      <Projects />
       <Research />
       <Contact />
       <Footer />
