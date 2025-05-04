@@ -9,7 +9,7 @@ import Projects from "./components/projects.jsx";
 
 export default function Home() {
   return (
-    <div className="lg:px-8 py-6">
+    <div className="lg:px-8 py-6 bg-gradient-to-br from-[#EDF5FC] to-white">
       <ScrollLinked />
       <AboutMe />
       <div className="grid grid-cols-1 lg:grid-cols-2">

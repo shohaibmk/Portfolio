@@ -22,7 +22,7 @@ function ProjectCard({ project, onClick }) {
             <h2 className="text-xl font-semibold mb-2">{name}</h2>
             
             {description && (
-                <p className="text-gray-600 mb-3 flex-grow">{description}</p>
+                <p className="text-gray-600flex-grow">{description}</p>
             )}
             
             {technologies && technologies.length > 0 && (
