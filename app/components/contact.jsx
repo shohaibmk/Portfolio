@@ -29,7 +29,7 @@ function Contact() {
   };
 
   return (
-    <div className="px-8 py-6">
+    <div className="px-8 py-6" style={{ fontFamily: "Georgia" }}>
       <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Contact</h2>
 
       <div className="lg:px-[10%]">
@@ -46,7 +46,7 @@ function Contact() {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-[#ece3dc] text-[#ece3dc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#ef9c82] focus:border-[#ef9c82]"
               required
             />
           </div>
@@ -59,7 +59,7 @@ function Contact() {
               rows="10"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-[#ece3dc] text-[#ece3dc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#ef9c82] focus:border-[#ef9c82]"
               required
             ></textarea>
           </div>

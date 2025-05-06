@@ -53,7 +53,7 @@ function Research() {
     ];
 
     return (
-        <div className="px-8 py-6">
+        <div className="px-8 py-6" style={{ fontFamily: "Georgia" }}>
             <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Research & Publications</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 text-[#fed9bc]">
                 {publications.map((publication, index) => (

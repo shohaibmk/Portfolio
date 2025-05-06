@@ -55,7 +55,7 @@ const SocialLink = ({ href, label, bgColor, hoverBgColor, shadowColor }) => (
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`w-full sm:w-auto text-center ${bgColor} text-white px-4 py-2 rounded-md ${hoverBgColor} hover:shadow-lg ${shadowColor} transition duration-300`}
+        className={`w-full sm:w-auto text-center ${bgColor} text-[#fed9bc] px-4 py-2 rounded-md ${hoverBgColor} hover:shadow-lg ${shadowColor} transition duration-300`}
     >
         {label}
     </a>
@@ -71,7 +71,7 @@ const ProfileInfo = () => (
             <h2 className="text-xl md:text-2xl font-bold text-[#fed9bc]/90" style={{ fontFamily: "Georgia" }}>Fullstack Software Engineer</h2>
             <h3 className="text-sm md:text-lg text-[#fed9bc]/80" style={{ fontFamily: "Georgia" }}>Building Scalable, Reliable Systems</h3>
         </div>
-        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-2">
+        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-2 text-[#fed9bc]">
             {SOCIAL_LINKS.map((link, index) => (
                 <SocialLink key={index} {...link} />
             ))}
@@ -80,7 +80,7 @@ const ProfileInfo = () => (
 );
 
 const SkillsSection = () => (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-2 md:gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-2 md:gap-4" style={{ fontFamily: "Georgia" }}>
         {skills.map((skill) => (
             <SkillButton key={skill} name={skill} />
         ))}

@@ -6,7 +6,7 @@ import { projects } from '../data/projects.js'
 
 function Projects() {
     return (
-        <div className="px-8 py-6">
+        <div className="px-8 py-6" style={{ fontFamily: "Georgia" }}>
             <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 select-none">
                 {projects.map((project, index) => (

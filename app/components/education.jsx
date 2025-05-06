@@ -40,7 +40,7 @@ const EducationItem = ({ universityName, universityUrl, degree, period, location
 
 function Education() {
     return (
-        <div className="px-8 py-6">
+        <div className="px-8 py-6" style={{ fontFamily: "Georgia" }}>
             <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Education</h2>
             {educationData.map((edu, index) => (
                 <EducationItem key={index} {...edu} />

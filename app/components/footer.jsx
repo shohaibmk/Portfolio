@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className="px-8 py-6">
+        <div className="px-8 py-6" style={{ fontFamily: "Georgia" }}>
             <div className="my-8 flex flex-col md:flex-row md:items-center md:justify-center gap-8">
                 <div className="mb-4 md:mb-0">
                     <h3 className="text-lg font-medium text-[#fed9bc]">Connect with me</h3>
