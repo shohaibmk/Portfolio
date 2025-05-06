@@ -10,8 +10,12 @@ const PublicationCard = ({ publication }) => {
             </a>
             <p className="text-sm text-[#fed9bc] font-bold">
                 {journal} {date && `· ${date}`} <br />
-                <a href={paperLink} target="_blank" rel="noopener noreferrer">(View Paper)</a>
-            </p>
+                <a href={paperLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center border border-gray-300 rounded-2xl px-2 py-1 my-2">
+                    <span>View Paper</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>            </p>
             <ul className="list-disc list-inside text-sm text-[#ece3dc] mt-2">
                 {keyPoints.map((point, index) => (
                     <li key={index} className="text-justify">{point}</li>
