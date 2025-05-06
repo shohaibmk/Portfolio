@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import SkillButton from './components/skillButton';
-import { skills } from './data/skills';
+import SkillButton from './skillButton';
+import { skills } from '../data/skills';
 
 const PROFILE_IMAGE = {
     src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731003250675?e=1751500800&v=beta&t=RA7of28EQvObskW6rtYMo8VoK7DbNebEbNBLv4M6QU8",
@@ -138,11 +138,6 @@ const Landing = () => {
                         </a>
                     </div>
                 </div>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-2 md:gap-4 p-4">
-                {skills.map((skill) => (
-                    <SkillButton key={skill} name={skill} />
-                ))}
             </div>
             <SkillsSection />
         </div>
