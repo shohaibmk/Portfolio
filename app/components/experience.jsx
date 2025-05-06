@@ -22,16 +22,17 @@ const experienceData = [
 
 function Experience() {
     return (
-        <div>
+        <div style={{ fontFamily: "Georgia" }}>
             <div className="px-8 py-6">
-                <h1 className="text-2xl font-bold mb-4">Experience</h1>
+                <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Experience</h2>
+
                 <div className="mb-6">
                     <a href={experienceData[0].companyUrl} target="_blank" rel="noopener noreferrer">
-                        <h2 className="text-xl font-semibold hover:underline">{experienceData[0].companyName}</h2>
+                        <h2 className="text-xl font-semibold hover:underline text-[#fed9bc]">{experienceData[0].companyName}</h2>
                     </a>
-                    <p className="text-sm text-gray-600">{experienceData[0].position}</p>
-                    <p className="text-sm text-gray-500">{experienceData[0].period} | {experienceData[0].location}</p>
-                    <ul className="list-disc list-inside text-sm text-gray-700 mt-2">
+                    <p className="text-sm text-[#ece3dc]">{experienceData[0].position}</p>
+                    <p className="text-sm text-[#ece3dc]">{experienceData[0].period} | {experienceData[0].location}</p>
+                    <ul className="list-disc list-inside text-sm text-[#ece3dc] mt-2">
                         {experienceData[0].bullets.map((bullet, index) => (
                             <li key={index}>{bullet}</li>
                         ))}
