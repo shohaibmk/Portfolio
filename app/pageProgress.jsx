@@ -15,7 +15,7 @@ export default function ScrollLinked() {
         <>
             <motion.div
                 id="scroll-indicator"
-                className="bg-green-500"
+                className="bg-[#ef9c82]"
                 style={{
                     scaleX,
                     position: "fixed",

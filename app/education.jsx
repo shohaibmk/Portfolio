@@ -18,7 +18,7 @@ const educationData = [
         period: "Aug 2017 – Jun 2021",
         location: "Pune, India",
         bullets: [
-            "Capstone: Real-Time Emotion Detection System using Deep Learning"
+            "Capstone: E-Health Patient Management System which uses Voice Recognition and Machine Learning to predict diseases based on symptoms."
         ]
     }
 ];
@@ -26,11 +26,11 @@ const educationData = [
 const EducationItem = ({ universityName, universityUrl, degree, period, location, bullets }) => (
     <div className="mb-6">
         <a href={universityUrl} target="_blank" rel="noopener noreferrer">
-            <h2 className="text-xl font-semibold hover:underline">{universityName}</h2>
+            <h2 className="text-xl font-semibold hover:underline text-[#fed9bc]">{universityName}</h2>
         </a>
-        <p className="text-sm text-gray-600">{degree}</p>
-        <p className="text-sm text-gray-500">{period} | {location}</p>
-        <ul className="list-disc list-inside text-sm text-gray-700 mt-2">
+        <p className="text-sm text-[#ece3dc]">{degree}</p>
+        <p className="text-sm text-[#ece3dc]">{period} | {location}</p>
+        <ul className="list-disc list-inside text-sm text-[#ece3dc] mt-2">
             {bullets.map((bullet, index) => (
                 <li key={index}>{bullet}</li>
             ))}
@@ -41,7 +41,7 @@ const EducationItem = ({ universityName, universityUrl, degree, period, location
 function Education() {
     return (
         <div className="px-8 py-6">
-            <h1 className="text-2xl font-bold mb-4">Education</h1>
+            <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Education</h2>
             {educationData.map((edu, index) => (
                 <EducationItem key={index} {...edu} />
             ))}

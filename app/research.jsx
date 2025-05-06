@@ -8,11 +8,11 @@ const PublicationCard = ({ publication }) => {
             <a href={citationLink} target="_blank" rel="noopener noreferrer">
                 <h2 className="text-xl font-semibold hover:underline w-max">{title}</h2>
             </a>
-            <p className="text-sm text-gray-800 font-bold">
+            <p className="text-sm text-[#fed9bc]/80 font-bold">
                 {journal} {date && `· ${date}`} <br />
                 <a href={paperLink} target="_blank" rel="noopener noreferrer">(View Paper)</a>
             </p>
-            <ul className="list-disc list-inside text-sm text-gray-700 mt-2">
+            <ul className="list-disc list-inside text-sm text-[#ece3dc]/80 mt-2">
                 {keyPoints.map((point, index) => (
                     <li key={index} className="text-justify">{point}</li>
                 ))}
@@ -54,8 +54,8 @@ function Research() {
 
     return (
         <div className="px-8 py-6">
-            <h1 className="text-2xl font-bold mb-4">Research & Publications</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Research & Publications</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 ">
                 {publications.map((publication, index) => (
                     <PublicationCard key={index} publication={publication} />
                 ))}

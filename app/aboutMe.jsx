@@ -1,21 +1,45 @@
 import React from 'react';
+import { ABOUT_PARAGRAPHS } from '../data/about';
 
-const AboutMe = () => (
-    <div className="px-8 py-6">
-        <h1 className="text-2xl font-bold mb-4">About Me</h1>
-        <Paragraph>
-            I'm a passionate and detail-oriented Fullstack Software Engineer with a strong foundation in computer science and hands-on experience in full-stack development, automation, and cloud-based systems. With a Master’s degree in Computer Science and real-world experience across startups and internships, I enjoy solving complex problems through clean, efficient code and collaborative teamwork.
-        </Paragraph>
-        <Paragraph>
-            I specialize in Python, JavaScript, and modern frameworks like React and Node.js, and I’m constantly exploring new technologies from machine learning to DevOps to stay ahead in this fast moving field. Whether it's building scalable backend systems or crafting user friendly frontend interfaces, I aim to create software that makes a real impact.
-        </Paragraph>
-    </div>
-);
+const STYLES = {
+    container: {
+        base: "px-8 py-6",
+        font: { fontFamily: "Georgia" }
+    },
+    heading: "text-2xl font-bold mb-4 text-[#fed9bc]",
+    paragraph: {
+        base: "text-justify text-[#ece3dc] mb-4 last:mb-0",
+        font: { fontFamily: "Georgia" }
+    }
+};
 
+/**
+ * @param {{ children: React.ReactNode }} props
+ * @returns {JSX.Element}
+ */
 const Paragraph = ({ children }) => (
-    <p className="text-justify">
+    <p
+        className={STYLES.paragraph.base}
+        style={STYLES.paragraph.font}
+    >
         {children}
     </p>
+);
+
+/**
+ * About Me section component displaying professional background and skills
+ * @returns {JSX.Element}
+ */
+const AboutMe = () => (
+    <div
+        className={STYLES.container.base}
+        style={STYLES.container.font}
+    >
+        <h2 className={STYLES.heading}>About Me</h2>
+        {ABOUT_PARAGRAPHS.map((content, index) => (
+            <Paragraph key={index}>{content}</Paragraph>
+        ))}
+    </div>
 );
 
 export default AboutMe;
