@@ -24,10 +24,10 @@ function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
 
                 <p className="text-gray-700">&copy; 2025 Shohaib Mallick. All rights reserved.</p>
-            </div>
+            </div> */}
         </div>
     )
 }
