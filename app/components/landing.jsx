@@ -89,7 +89,7 @@ const SkillsSection = () => (
 
 const Landing = () => {
     return (
-        <div className="px-4">
+        <div className="px-8 ">
             <div className="flex flex-col md:flex-row items-center justify-center py-8 md:py-10 gap-8">
                 <ProfileImage />
                 <ProfileInfo />

@@ -6,7 +6,7 @@ const PublicationCard = ({ publication }) => {
     return (
         <div className={className}>
             <a href={citationLink} target="_blank" rel="noopener noreferrer">
-                <h2 className="text-xl font-semibold hover:underline w-max">{title}</h2>
+                <h2 className="text-xl font-semibold hover:underline">{title}</h2>
             </a>
             <p className="text-sm text-[#fed9bc] font-bold">
                 {journal} {date && `· ${date}`} <br />
