@@ -2,8 +2,14 @@
 
 import Landing from "./landing.jsx"
 import { motion, useSpring, useScroll } from "motion/react"
+import { useEffect } from "react"
+import { initializeAnalytics } from "../firebase/analytics"
 
 export default function ScrollLinked() {
+    useEffect(() => {
+        initializeAnalytics();
+    }, []);
+
     const { scrollYProgress } = useScroll()
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
