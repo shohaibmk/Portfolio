@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { FaXTwitter, FaInstagram, FaSnapchat } from 'react-icons/fa6';
 import { initializeAnalytics } from '../firebase/analytics';
 import { logEvent } from 'firebase/analytics';
+import { LINKS } from '../data/links';
 
 const Socials = () => {
 
@@ -21,7 +22,7 @@ const Socials = () => {
         {
             name: 'Instagram',
             icon: <FaInstagram className="w-8 h-8" />,
-            url: 'https://instagram.com/shohaibmallick',
+            url: `${LINKS.instagram}`,
             color: 'text-pink-600'
         },
         {

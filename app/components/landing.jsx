@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import SkillButton from './skillButton';
 import { skills } from '../data/skills';
+import { LINKS } from '../data/links';
 
 const PROFILE_IMAGE = {
     src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731003250675?e=1751500800&v=beta&t=RA7of28EQvObskW6rtYMo8VoK7DbNebEbNBLv4M6QU8",
@@ -11,21 +12,21 @@ const PROFILE_IMAGE = {
 
 const SOCIAL_LINKS = [
     {
-        href: "https://res.cloudinary.com/dbqwc4btc/image/upload/v1745868259/Shohaib_Mallick_Resume.pdf",
+        href: `${LINKS.resume}`,
         label: "Resume",
         bgColor: "bg-black",
         hoverBgColor: "hover:bg-black/95",
         shadowColor: "shadow-black/30"
     },
     {
-        href: "https://www.linkedin.com/in/shohaibmk/",
+        href: `${LINKS.linkedin}`,
         label: "LinkedIn",
         bgColor: "bg-[#0a66c2]",
         hoverBgColor: "hover:bg-[#0a66c2]/95",
         shadowColor: "shadow-[#0a66c2]/30"
     },
     {
-        href: "https://github.com/shohaibmk",
+        href: `${LINKS.github}`,
         label: "GitHub",
         bgColor: "bg-[#08872B]",
         hoverBgColor: "hover:bg-[#08872B]/95",
