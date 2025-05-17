@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import { CONTACTS } from '../data/contacts'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ function Contact() {
     const emailBody = `${formData.message}`;
 
     // Create the mailto link with the form data
-    const mailtoLink = `mailto:shohaibm99@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:${CONTACTS.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
 
     // Open the default email client
     window.location.href = mailtoLink;
