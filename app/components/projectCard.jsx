@@ -7,7 +7,7 @@ function ProjectCard({ project, onClick }) {
     const { name, description, image, technologies, githubLink, demoLink } = project;
     
     return (
-        <div onClick={onClick} className="mb-6 border border-gray-300/20 rounded-lg p-4 hover:shadow-2xl hover:shadow-[#fed9bc]/30 transition-all duration-100 h-full flex flex-col hover:cursor-pointer bg-[#fed9bc]/5" style={{ fontFamily: "Georgia" }}>
+        <div onClick={onClick} className="mb-6 border border-gray-300/20 rounded-lg p-4 hover:shadow-2xl hover:shadow-[#fed9bc]/30 transition-all duration-100 h-full flex flex-col hover:cursor-pointer bg-[#fed9bc]/5 hover:scale-105" style={{ fontFamily: "Georgia" }}>
             {image && (
                 <div className="relative w-full h-40 mb-3 overflow-hidden rounded-md">
                     <Image 
