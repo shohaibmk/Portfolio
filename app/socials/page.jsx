@@ -1,59 +1,66 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
+import { useSearchParams } from 'next/navigation';
+import { FaXTwitter, FaInstagram, FaSnapchat } from 'react-icons/fa6';
 import { initializeAnalytics } from '../firebase/analytics';
+import { logEvent } from 'firebase/analytics';
 
 const Socials = () => {
+
+    const searchParams = useSearchParams();
+    const platform = searchParams.get('referrer');
+
     const socialLinks = [
         {
-            name: 'GitHub',
-            icon: <FaGithub className="w-8 h-8" />,
-            url: 'https://github.com/shohaibmallick',
-            color: 'hover:text-gray-800'
+            name: 'X',
+            icon: <FaXTwitter className="w-8 h-8" />,
+            url: 'https://x.com/shohaibmallick',
+            color: 'text-black'
         },
         {
-            name: 'LinkedIn',
-            icon: <FaLinkedin className="w-8 h-8" />,
-            url: 'https://linkedin.com/in/shohaibmallick',
-            color: 'hover:text-blue-600'
+            name: 'Instagram',
+            icon: <FaInstagram className="w-8 h-8" />,
+            url: 'https://instagram.com/shohaibmallick',
+            color: 'text-pink-600'
         },
         {
-            name: 'Twitter',
-            icon: <FaTwitter className="w-8 h-8" />,
-            url: 'https://twitter.com/shohaibmallick',
-            color: 'hover:text-blue-400'
+            name: 'Snapchat',
+            icon: <FaSnapchat className="w-8 h-8" />,
+            url: 'https://snapchat.com/add/shohaibmallick',
+            color: 'text-yellow-400'
         },
-        {
-            name: 'Email',
-            icon: <MdEmail className="w-8 h-8" />,
-            url: 'mailto:contact@shohaibmallick.com',
-            color: 'hover:text-red-500'
-        }
     ];
 
     useEffect(() => {
-        initializeAnalytics();
-    }, []);
+        const analytics = initializeAnalytics();
+        if (platform && analytics) {
+
+            logEvent(analytics, `referrer`, { "from": platform,
+                "page": "socials"
+            });
+        }
+    }, [platform]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#EDF5FC] to-white p-8">
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold mb-8 text-center">Connect With Me</h1>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-6 bg-white rounded-lg shadow-lg">
+        <div className="p-8 min-h-screen bg-[#173333] flex justify-center items-center">
+            <div className="max-w-4xl">
+                <h2 className="text-4xl font-bold mb-8 text-center text-[#fed9bc]">Connect With Me</h2>
+                <p className="text-center text-[#fed9bc] mb-8">shohaibmk / </p>
+                <div className="flex justify-center items-center grid grid-cols-1 md:grid-cols-3 gap-8 p-6 bg-white rounded-lg shadow-lg">
                     {socialLinks.map((social, index) => (
                         <a
                             key={index}
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300 transform hover:scale-105 ${social.color}`}
+                            className={`flex flex-col items-center justify-center p-4 border border-black rounded-lg transition-all duration-300 transform hover:scale-105 ${social.color}`}
                         >
                             {social.icon}
                             <span className="mt-2 text-sm font-medium">{social.name}</span>
                         </a>
                     ))}
+
                 </div>
             </div>
         </div>

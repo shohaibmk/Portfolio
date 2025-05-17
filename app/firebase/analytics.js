@@ -11,7 +11,6 @@ export function initializeAnalytics() {
         try {
             const app = initializeApp(firebaseConfig);
             analytics = getAnalytics(app);
-            console.log('Firebase Analytics initialized');
         } catch (error) {
             console.error('Error initializing Firebase:', error);
         }
