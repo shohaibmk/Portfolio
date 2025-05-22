@@ -11,7 +11,7 @@ const PROFILE_IMAGE = {
 
 const SOCIAL_LINKS = [
     {
-        href: "https://res.cloudinary.com/dbqwc4btc/image/upload/v1745868259/Shohaib_Mallick_Resume.pdf",
+        href: "https://res.cloudinary.com/dbqwc4btc/image/upload/v1747954704/Shohaib_Mallick_Resume.pdf",
         label: "Resume",
         bgColor: "bg-black",
         hoverBgColor: "hover:bg-black/95",
