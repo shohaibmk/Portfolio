@@ -5,10 +5,10 @@ const experienceData = [
         companyName: "Find Me LLC",
         companyUrl: "https://www.linkedin.com/company/findmeee/about/",
         position: "Fullstack Developer Intern",
-        period: "Dec 2024 – Present",
+        period: "Dec 2024 – July 2025",
         location: "Remote",
         bullets: [
-            "Led a team of 12 engineers to build scalable and extensible microservices aligned with platform reliability goals",
+            "Built scalable and extensible microservices aligned with platform reliability goals",
             "Designed and deployed RESTful APIs and GraphQL endpoints to support modular backend services and improve data integration",
             "Developed typo-tolerant search using fuzzy logic, enhancing user discoverability and reducing bounce rate",
             "Improved backend performance by optimizing API response time, achieving significant latency reduction",
