@@ -4,7 +4,7 @@ import { skills } from '../data/skills';
 
 const PROFILE_IMAGE = {
     // src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731003250675?e=1751500800&v=beta&t=RA7of28EQvObskW6rtYMo8VoK7DbNebEbNBLv4M6QU8",
-    src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731003250650?e=1765411200&v=beta&t=hMHWgUxkbloBwc24f_qLw6rSbpgi-XdNdx_ubKnA-qU",
+    src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731003250650?e=1767830400&v=beta&t=--Ry1b5gzFo5ZxgV0-m0ZvzyINBYWE6nVTwUtswTiWI",
     alt: "Shohaib Mallick",
     width: 180,
     height: 180
