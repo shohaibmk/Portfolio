@@ -8,7 +8,7 @@ const nextConfig = {
     },{
       protocol: 'https',
       hostname: 'res.cloudinary.com',
-      pathname: 'dbqwc4btc/image/upload/**',
+      pathname: '/dbqwc4btc/image/upload/**',
     }],
   },
 };
