@@ -12,10 +12,8 @@ export default function Home() {
     <div className="lg:px-12 py-6 bg-[#173333]">
       <ScrollLinked />
       <AboutMe />
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <Experience />
-        <Education />
-      </div>
+      <Education />
+      <Experience />
       <Research />
       <Projects />
       <Contact />
