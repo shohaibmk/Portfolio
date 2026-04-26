@@ -1,3 +1,4 @@
+import Nav from "./components/nav.jsx";
 import ScrollLinked from "./components/pageProgress.jsx";
 import AboutMe from "./components/aboutMe.jsx";
 import Education from "./components/education.jsx";
@@ -9,7 +10,8 @@ import Footer from "./components/footer.jsx";
 
 export default function Home() {
   return (
-    <div className="lg:px-12 py-6 bg-[#173333]">
+    <div>
+      <Nav />
       <ScrollLinked />
       <AboutMe />
       <Education />

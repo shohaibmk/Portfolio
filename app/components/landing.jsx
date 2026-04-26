@@ -1,103 +1,221 @@
-import Image from 'next/image';
-import SkillButton from './skillButton';
-import { skills } from '../data/skills';
+import Image from "next/image";
+import { skills } from "../data/skills";
 
-const PROFILE_IMAGE = {
-    // src: "https://media.licdn.com/dms/image/v2/D4E03AQHFdYjW4O2XIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731003250675?e=1751500800&v=beta&t=RA7of28EQvObskW6rtYMo8VoK7DbNebEbNBLv4M6QU8",
-    src: "https://res.cloudinary.com/dbqwc4btc/image/upload/v1769524693/medoq.jpg",
-    alt: "Shohaib Mallick",
-    width: 180,
-    height: 180
-};
+const PROFILE_SRC =
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1769524693/medoq.jpg";
+const RESUME_URL =
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1763652289/Shohaib_Mallick_Resume_sqq8og.pdf";
 
-const SOCIAL_LINKS = [
-    {
-        href: "https://res.cloudinary.com/dbqwc4btc/image/upload/v1763652289/Shohaib_Mallick_Resume_sqq8og.pdf",
-        label: "Resume",
-        bgColor: "bg-black",
-        hoverBgColor: "hover:bg-black/95",
-        shadowColor: "shadow-black/30"
-    },
-    {
-        href: "https://www.linkedin.com/in/shohaibmk/",
-        label: "LinkedIn",
-        bgColor: "bg-[#0a66c2]",
-        hoverBgColor: "hover:bg-[#0a66c2]/95",
-        shadowColor: "shadow-[#0a66c2]/30"
-    },
-    {
-        href: "https://github.com/shohaibmk",
-        label: "GitHub",
-        bgColor: "bg-[#08872B]",
-        hoverBgColor: "hover:bg-[#08872B]/95",
-        shadowColor: "shadow-[#08872B]/30"
-    }
-];
-
-const OnlineIndicator = () => (
-    <span className="relative flex h-3 w-3">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-    </span>
-);
-
-const ProfileImage = () => (
-    <div className="mb-4 md:mb-8">
-        <Image
-            {...PROFILE_IMAGE}
-            className="rounded-full w-32 h-32 md:w-48 md:h-48 border-1 border-gray-300 shadow-lg shadow-gray-500/50"
-            priority
-        />
-    </div>
-);
-
-const SocialLink = ({ href, label, bgColor, hoverBgColor, shadowColor }) => (
-    <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`w-full sm:w-auto text-center ${bgColor} text-[#fed9bc] px-4 py-2 rounded-md ${hoverBgColor} hover:shadow-lg ${shadowColor} transition duration-300`}
+export default function Landing() {
+  return (
+    <section
+      style={{ background: "var(--bg)" }}
+      className="pt-[120px] pb-16 md:pb-20"
     >
-        {label}
-    </a>
-);
-
-const ProfileInfo = () => (
-    <div className="max-w-2xl lg:mx-32">
-        <div id="name" className="space-y-1 md:space-y-2">
-            <h1 className="text-3xl md:text-4xl font-bold flex flex-row items-center gap-2 text-[#fed9bc]" style={{ fontFamily: 'Georgia' }}>
-                <span>Hey, I'm Shohaib Mallick</span>
-                <OnlineIndicator />
-            </h1>
-            <h2 className="text-xl md:text-2xl font-bold text-[#fed9bc]/90" style={{ fontFamily: "Georgia" }}>Fullstack Software Engineer</h2>
-            <h3 className="text-sm md:text-lg text-[#fed9bc]/80" style={{ fontFamily: "Georgia" }}>Building Scalable, Reliable Systems</h3>
-        </div>
-        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-2 text-[#fed9bc]">
-            {SOCIAL_LINKS.map((link, index) => (
-                <SocialLink key={index} {...link} />
-            ))}
-        </div>
-    </div>
-);
-
-const SkillsSection = () => (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-2 md:gap-4" style={{ fontFamily: "Georgia" }}>
-        {skills.map((skill) => (
-            <SkillButton key={skill} name={skill} />
-        ))}
-    </div>
-);
-
-const Landing = () => {
-    return (
-        <div className="px-8 ">
-            <div className="flex flex-col md:flex-row items-center justify-center py-8 md:py-10 gap-8">
-                <ProfileImage />
-                <ProfileInfo />
+      <div className="max-w-7xl mx-auto px-8 md:px-16">
+        {/* Hero grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-20 items-center">
+          {/* Left: text */}
+          <div>
+            {/* Status pill */}
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                background: "var(--accent-soft)",
+                color: "var(--accent)",
+                padding: "6px 14px",
+                borderRadius: 999,
+                fontSize: 13,
+                fontWeight: 500,
+                marginBottom: 28,
+              }}
+            >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: "var(--success)",
+                  flexShrink: 0,
+                }}
+              />
+              Open to Connect · 2026
             </div>
-            <SkillsSection />
-        </div>
-    );
-};
 
-export default Landing;
+            <h1
+              style={{
+                fontSize: "clamp(40px, 5.5vw, 72px)",
+                lineHeight: 1.06,
+                fontWeight: 500,
+                letterSpacing: "-0.025em",
+                margin: "0 0 24px",
+                color: "var(--ink)",
+                fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+              }}
+            >
+              Hi, I'm Shohaib. I build{" "}
+              <span
+                style={{
+                  fontFamily: "var(--font-newsreader, Georgia, serif)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  color: "var(--accent)",
+                }}
+              >
+                scalable, reliable
+              </span>{" "}
+              systems for people, not just spec sheets.
+            </h1>
+
+            <p
+              style={{
+                fontSize: "clamp(16px, 1.4vw, 20px)",
+                lineHeight: 1.55,
+                color: "var(--muted)",
+                maxWidth: 560,
+                margin: "0 0 36px",
+                fontFamily: "var(--font-newsreader, Georgia, serif)",
+              }}
+            >
+              Fullstack engineer with a Master's in CS from Boston University. I
+              turn messy real-world problems into clean, working software across
+              React, Node, Python, and AWS.
+            </p>
+
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: "var(--accent)",
+                  color: "#ffffff",
+                  padding: "14px 24px",
+                  borderRadius: 10,
+                  fontSize: 15,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+                }}
+              >
+                View résumé (PDF)
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shohaibmk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  border: "1px solid var(--rule)",
+                  background: "transparent",
+                  color: "var(--ink)",
+                  padding: "14px 20px",
+                  borderRadius: 10,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+                }}
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/shohaibmk"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  border: "1px solid var(--rule)",
+                  background: "transparent",
+                  color: "var(--ink)",
+                  padding: "14px 20px",
+                  borderRadius: 10,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+                }}
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          {/* Right: portrait */}
+          <div className="hidden lg:flex justify-center">
+            <div
+              style={{
+                width: 300,
+                height: 360,
+                borderRadius: 24,
+                overflow: "hidden",
+                border: "1px solid var(--rule)",
+                position: "relative",
+                flexShrink: 0,
+              }}
+            >
+              <Image
+                src={PROFILE_SRC}
+                alt="Shohaib Mallick"
+                fill
+                sizes="(max-width: 1024px) 0px, 300px"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Skills strip */}
+        <div
+          style={{
+            marginTop: 56,
+            paddingTop: 32,
+            borderTop: "1px solid var(--rule)",
+          }}
+        >
+          <div
+            style={{
+              fontSize: 11,
+              color: "var(--muted)",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              marginBottom: 16,
+              fontFamily: "var(--font-jetbrains-mono, monospace)",
+            }}
+          >
+            Tools I reach for
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 10,
+              flexWrap: "wrap",
+            }}
+          >
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  background: "rgba(0,0,0,0.04)",
+                  color: "var(--ink)",
+                  padding: "5px 12px",
+                  borderRadius: 999,
+                  fontSize: 12,
+                  fontWeight: 500,
+                  border: "1px solid var(--rule)",
+                  fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+                }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

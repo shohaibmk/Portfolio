@@ -21,25 +21,18 @@ export default function ScrollLinked() {
     <>
       <motion.div
         id="scroll-indicator"
-        className="bg-[#ef9c82]"
         style={{
           scaleX,
           position: "fixed",
           top: 0,
           left: 0,
           right: 0,
-          height: 10,
+          height: 3,
+          background: "var(--accent)",
           originX: 0,
+          zIndex: 200,
         }}
       />
-      <Content />
-    </>
-  );
-}
-
-function Content() {
-  return (
-    <>
       <Landing />
     </>
   );
