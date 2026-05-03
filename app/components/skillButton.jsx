@@ -1,6 +1,6 @@
 import React from 'react';
 
-// SkillButton component for button under landing section
+// SkillButton component for button under hero section
 const SkillButton = ({ name }) => {
   return (
     <button className="bg-[#ef9c82] text-black shadow-lg shadow-gray-500/10 w-auto rounded-sm p-2 px-2">
