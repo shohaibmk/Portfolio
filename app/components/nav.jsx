@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 
+const RESUME_URL =
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1777798048/ShohaibMallickResume.pdf";
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -43,10 +46,16 @@ export default function Nav() {
             fontWeight: 600,
             flexShrink: 0,
           }}
+          className="cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           S
         </div>
-        <strong style={{ fontSize: 15, color: "var(--ink)" }}>
+        <strong
+          style={{ fontSize: 15, color: "var(--ink)" }}
+          className="hover:cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           Shohaib Mallick
         </strong>
         <span
@@ -71,15 +80,13 @@ export default function Nav() {
               transition: "color 0.15s",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--muted)")
-            }
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
           >
             {id.charAt(0).toUpperCase() + id.slice(1)}
           </a>
         ))}
         <a
-          href="https://res.cloudinary.com/dbqwc4btc/image/upload/v1763652289/Shohaib_Mallick_Resume_sqq8og.pdf"
+          href={RESUME_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={{

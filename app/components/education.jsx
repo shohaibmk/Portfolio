@@ -1,10 +1,13 @@
+import Image from "next/image";
+
 const BOSTON_UNIVERSITY_URL =
   "https://www.linkedin.com/school/boston-university/about/";
 const PUNE_UNIVERSITY_URL =
   "https://www.linkedin.com/school/university-of-pune/about/";
+// const LIBRARY_IMAGE_URL =
+//   "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80";
 const LIBRARY_IMAGE_URL =
-  "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80";
-// const LIBRARY_IMAGE_URL = "/IMG20240518184709.jpg";
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1777797169/GraduationPhoto1.jpg";
 
 const SectionLabel = ({ n, children }) => (
   <div
@@ -167,16 +170,19 @@ export default function Education() {
                 position: "relative",
               }}
             >
-              <img
+              <Image
                 src={LIBRARY_IMAGE_URL}
-                alt="Library shelves — academic journey"
+                alt="Academic journey"
+                width={1920}
+                height={1080}
                 style={{
                   width: "100%",
-                  height: 460,
+                  height: "auto",
                   objectFit: "cover",
                   display: "block",
                   filter: "saturate(0.8) sepia(0.12)",
                 }}
+                quality={100}
               />
               <div
                 style={{
