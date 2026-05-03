@@ -1,6 +1,6 @@
 "use client";
 
-import Landing from "./landing.jsx";
+import Hero from "./hero.jsx";
 import { motion, useSpring, useScroll } from "motion/react";
 import { useEffect } from "react";
 import { initializeAnalytics } from "../firebase/analytics";
@@ -21,26 +21,19 @@ export default function ScrollLinked() {
     <>
       <motion.div
         id="scroll-indicator"
-        className="bg-[#ef9c82]"
         style={{
           scaleX,
           position: "fixed",
           top: 0,
           left: 0,
           right: 0,
-          height: 10,
+          height: 7,
+          background: "var(--accent)",
           originX: 0,
+          zIndex: 200,
         }}
       />
-      <Content />
-    </>
-  );
-}
-
-function Content() {
-  return (
-    <>
-      <Landing />
+      <Hero />
     </>
   );
 }

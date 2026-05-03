@@ -10,36 +10,39 @@ Personal portfolio: Next.js 16, React 19, Tailwind CSS v4. Projects, experience,
 
 - **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`)
-- **Animation**: Framer Motion 12.9.1
+- **Animation**: Motion 12.9.1 (`motion/react` imports)
 - **Analytics**: Firebase Analytics
 - **Font**: next/font/google (Geist Sans + Geist Mono)
 
 ## Commands
 
-| Command         | Description                   |
-| --------------- | ----------------------------- |
-| `npm run dev`   | Start dev server on port 3000 |
-| `npm run build` | Build for production          |
-| `npm start`     | Start prod server             |
-| `npm run lint`  | Run ESLint                    |
+| Command            | Description                   |
+| ------------------ | ----------------------------- |
+| `npm run dev`      | Start dev server on port 3000 |
+| `npm run build`    | Build for production          |
+| `npm start`        | Start prod server             |
+| `npm run lint`     | Run ESLint                    |
+| `npm run frontend` | Build then start prod server  |
 
 ## Architecture
 
 **Page Structure** (`app/page.jsx`):
 
-- `ScrollLinked` — scroll progress + analytics init
-- `Landing` — hero, profile image, social links, skills
+- `Nav` — top navigation
+- `ScrollLinked` — scroll progress bar + analytics init; renders `Hero` inside
 - `AboutMe` — professional background
-- `Experience` — work/internship history
 - `Education` — academic degrees
+- `Experience` — work/internship history
 - `Research` — publications
 - `Projects` — project showcase grid
 - `Contact` — email form
 - `Footer` — contact info, social links
 
+`Hero` (hero section, profile image, social links, skills) is mounted by `ScrollLinked`, not `page.jsx` directly.
+
 **Component Organization**:
 
-- Components: `app/components/`
+- Components: `app/components/` (incl. `nav.jsx`, `projectCard.jsx`, `skillButton.jsx`, `ui/`)
 - Data: `app/data/` (exported JS objects)
 - Firebase: `app/firebase/` (config + analytics)
 

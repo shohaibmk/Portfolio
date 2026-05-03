@@ -1,84 +1,249 @@
-import React from "react";
+const SectionLabel = ({ n, children }) => (
+  <div
+    style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
+  >
+    <span
+      style={{
+        fontFamily: "var(--font-jetbrains-mono, monospace)",
+        fontSize: 12,
+        color: "var(--muted)",
+        letterSpacing: "0.1em",
+      }}
+    >
+      § {n}
+    </span>
+    <span
+      style={{ flex: 1, height: 1, background: "var(--rule)", maxWidth: 60 }}
+    />
+    <span
+      style={{
+        fontSize: 13,
+        color: "var(--accent)",
+        fontWeight: 600,
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+      }}
+    >
+      {children}
+    </span>
+  </div>
+);
 
 const experienceData = [
   {
-    companyName: "Aaum AI",
-    position: "Fullstack Software Engineer",
-    period: "Sept 2025 – March 2026",
-    location: "Pune, Maharashtra (India)",
+    company: "Aaum AI",
+    companyUrl: null,
+    role: "Fullstack Software Engineer",
+    dates: "Sept 2025 – Mar 2026",
+    location: "Pune, India",
+    outcome: "Cut API response time by ~35% with Postgres + Redis caching",
     bullets: [
-      "Developed and integrated scalable APIs in Node.js (TypeScript), implementing Razorpay payment processor with webhooks for a subscription-based model improving payment success rate and enabling seamless recurring billing",
-      "Designed and optimized backend systems using PostgreSQL and Redis caching, reducing query response time by ~35% and enhancing overall API performance",
-      "Built responsive front-end interfaces with React (TypeScript) and Tailwind CSS, leveraging Zustand for efficient, predictable state management across complex UI workflows",
-      "Engineered an agentic Retrieval-Augmented Generation (RAG) service using Agno AI, Python, and FastAPI, integrating Google Custom Search for web search capability along with LanceDB for storing vector embeddings to enable semantic search and contextual retrieval",
-      "Integrated multiple LLM providers (Perplexity, OpenAI, and Grok APIs) for dynamic chat completions, enhancing response diversity, reliability, and contextual accuracy in AI-driven workflows",
-      "Deployed services using Docker on AWS EC2, ensuring scalable, fault-tolerant infrastructure",
+      "Developed and integrated scalable APIs in Node.js (TypeScript), implementing Razorpay payment processor with webhooks for a subscription-based model.",
+      "Built an agentic RAG service (Python · FastAPI · LanceDB · Agno) so the product can actually read the web and remember what it learned.",
+      "Integrated multiple LLM providers (OpenAI, Perplexity, and Grok) for dynamic chat completions, enhancing response diversity and reliability.",
+      "Built responsive front-end interfaces with React (TypeScript) and Tailwind CSS, leveraging Zustand for efficient state management.",
+      "Deployed services using Docker on AWS EC2, ensuring scalable, fault-tolerant infrastructure.",
     ],
-    className: "mb-6 lg:pe-8",
   },
   {
-    companyName: "Find Me LLC",
+    company: "Find Me LLC",
     companyUrl: "https://www.linkedin.com/company/findmeee/about/",
-    position: "Fullstack Developer Intern",
-    period: "Dec 2024 – July 2025",
-    location: "Remote (NC, USA)",
+    role: "Fullstack Developer Intern",
+    dates: "Dec 2024 – Jul 2025",
+    location: "Remote · NC, USA",
+    outcome: "Typo-tolerant search lifted discovery and cut bounce rate",
     bullets: [
-      "Built scalable and extensible microservices aligned with platform reliability goals",
-      "Designed and deployed RESTful APIs and GraphQL endpoints to support modular backend services and improve data integration",
-      "Developed typo-tolerant search using fuzzy logic, enhancing user discoverability and reducing bounce rate",
-      "Improved backend performance by optimizing API response time, achieving significant latency reduction",
-      "Integrated fault-tolerant data layers with PostgreSQL, MongoDB, and Redis",
-      "Built centralized observability infrastructure using OpenTelemetry, Promtail, and Grafana Loki for real-time monitoring",
-      "Implemented secure, scalable OAuth2/JWT authentication, following modern software engineering best practices",
-      "Deployed production-grade pipelines with GitLab CI/CD, enhancing delivery speed and system reliability",
+      "Designed REST + GraphQL endpoints for a microservices backend aligned with platform reliability goals.",
+      "Stitched Postgres, MongoDB, and Redis together with proper failovers and integrated fault-tolerant data layers.",
+      "Set up real-time monitoring with OpenTelemetry + Grafana Loki and outages stopped being a guessing game.",
+      "Shipped OAuth2 / JWT auth and a GitLab CI/CD pipeline the team actually trusts.",
     ],
-    className: "mb-6 lg:ps-8",
   },
 ];
 
-function ExperienceItem({ experience }) {
+export default function Experience() {
   return (
-    <div className={experience.className}>
-      {experience.companyUrl && (
-        <a
-          href={experience.companyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+    <section
+      id="experience"
+      style={{
+        background: "var(--card)",
+        borderTop: "1px solid var(--rule)",
+        borderBottom: "1px solid var(--rule)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-20 md:py-24">
+        <SectionLabel n="03">Experience</SectionLabel>
+        <h2
+          style={{
+            fontSize: "clamp(28px, 3.8vw, 48px)",
+            fontWeight: 500,
+            letterSpacing: "-0.02em",
+            margin: "0 0 56px",
+            lineHeight: 1.05,
+            color: "var(--ink)",
+            fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+          }}
         >
-          <h2 className="text-xl font-semibold hover:underline text-[#fed9bc]">
-            {experience.companyName}
-          </h2>
-        </a>
-      )}
-      {!experience.companyUrl && (
-        <h2 className="text-xl font-semibold text-[#fed9bc]">
-          {experience.companyName}
+          Real work,{" "}
+          <span
+            style={{
+              fontFamily: "var(--font-newsreader, Georgia, serif)",
+              fontStyle: "italic",
+              fontWeight: 400,
+            }}
+          >
+            real outcomes.
+          </span>
         </h2>
-      )}
-      <p className="text-sm text-[#ece3dc]">{experience.position}</p>
-      <p className="text-sm text-[#ece3dc]">
-        {experience.period} | {experience.location}
-      </p>
-      <ul className="list-disc list-inside text-justify text-sm text-[#ece3dc] mt-2">
-        {experience.bullets.map((bullet, index) => (
-          <li key={index}>{bullet}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
-function Experience() {
-  return (
-    <div className="px-8 py-0" style={{ fontFamily: "Georgia" }}>
-      <h2 className="text-2xl font-bold mb-4 text-[#fed9bc]">Experience</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 text-[#fed9bc]">
-        {experienceData.map((experience, index) => (
-          <ExperienceItem key={index} experience={experience} />
-        ))}
+        <div style={{ display: "grid", gap: 0 }}>
+          {experienceData.map((x, i) => (
+            <div
+              key={x.company}
+              style={{
+                borderTop: "1px solid var(--rule)",
+                paddingTop: 36,
+                paddingBottom: 36,
+                borderBottom:
+                  i === experienceData.length - 1
+                    ? "1px solid var(--rule)"
+                    : "none",
+              }}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-12">
+                {/* Left: company info */}
+                <div>
+                  <div
+                    style={{
+                      fontSize: 12,
+                      color: "var(--muted)",
+                      fontFamily: "var(--font-jetbrains-mono, monospace)",
+                      letterSpacing: "0.06em",
+                      marginBottom: 12,
+                    }}
+                  >
+                    {x.dates}
+                  </div>
+                  {x.companyUrl ? (
+                    <a
+                      href={x.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <h3
+                        style={{
+                          fontSize: "clamp(18px, 1.8vw, 24px)",
+                          fontWeight: 500,
+                          letterSpacing: "-0.015em",
+                          margin: "0 0 6px",
+                          color: "var(--ink)",
+                          fontFamily:
+                            "var(--font-inter-tight, system-ui, sans-serif)",
+                        }}
+                      >
+                        {x.company}
+                      </h3>
+                    </a>
+                  ) : (
+                    <h3
+                      style={{
+                        fontSize: "clamp(18px, 1.8vw, 24px)",
+                        fontWeight: 500,
+                        letterSpacing: "-0.015em",
+                        margin: "0 0 6px",
+                        color: "var(--ink)",
+                        fontFamily:
+                          "var(--font-inter-tight, system-ui, sans-serif)",
+                      }}
+                    >
+                      {x.company}
+                    </h3>
+                  )}
+                  <div
+                    style={{
+                      fontSize: 15,
+                      color: "var(--accent)",
+                      fontFamily: "var(--font-newsreader, Georgia, serif)",
+                      fontStyle: "italic",
+                      marginBottom: 6,
+                    }}
+                  >
+                    {x.role}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 13,
+                      color: "var(--muted)",
+                      fontFamily:
+                        "var(--font-inter-tight, system-ui, sans-serif)",
+                    }}
+                  >
+                    {x.location}
+                  </div>
+                </div>
+
+                {/* Right: outcome + bullets */}
+                <div>
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      background: "var(--accent-soft)",
+                      color: "var(--accent)",
+                      padding: "8px 14px",
+                      borderRadius: 8,
+                      fontSize: 14,
+                      fontWeight: 600,
+                      marginBottom: 24,
+                      fontFamily:
+                        "var(--font-inter-tight, system-ui, sans-serif)",
+                    }}
+                  >
+                    ↗ {x.outcome}
+                  </div>
+                  <ul
+                    style={{
+                      margin: 0,
+                      padding: 0,
+                      listStyle: "none",
+                      display: "grid",
+                      gap: 14,
+                    }}
+                  >
+                    {x.bullets.map((b, j) => (
+                      <li
+                        key={j}
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "16px 1fr",
+                          gap: 12,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: "var(--ink)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "var(--accent)",
+                            fontWeight: 600,
+                            marginTop: 1,
+                          }}
+                        >
+                          —
+                        </span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Experience;

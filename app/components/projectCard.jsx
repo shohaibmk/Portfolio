@@ -1,80 +1,149 @@
-"use client"
+"use client";
 
-import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 
-function ProjectCard({ project, onClick }) {
-    const { name, description, image, technologies, githubLink, demoLink } = project;
-    
-    return (
-        <div onClick={onClick} className="mb-6 border border-gray-300/20 rounded-lg p-4 hover:shadow-2xl hover:shadow-[#fed9bc]/30 transition-all duration-100 h-full flex flex-col hover:cursor-pointer bg-[#fed9bc]/5" style={{ fontFamily: "Georgia" }}>
-            {image && (
-                <div className="relative w-full h-40 mb-3 overflow-hidden rounded-md">
-                    <Image 
-                        src={image}
-                        alt={name}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        className="rounded-md"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                </div>
-            )}
-            
-            <div className="flex flex-col flex-grow">
-                <h2 className="text-xl font-semibold mb-2 text-[#fed9bc]">{name}</h2>
-                
-                {description && (
-                    <p className="text-[#ece3dc] mb-4">{description}</p>
-                )}
-            </div>
-            
-            <div className="mt-auto">
-                {technologies && technologies.length > 0 && (
-                    <div className="mb-3">
-                        <div className="flex flex-wrap gap-2 align-bottom">
-                            {technologies.map((tech, index) => (
-                                <span 
-                                    key={index} 
-                                    className="bg-[#ef9c82] text-xs text-black px-2 py-1 rounded-md"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-            <div className="flex gap-3 mt-auto pt-2">
-                {githubLink && (
-                    <a 
-                        href={githubLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-[#fed9bc] flex items-center gap-1 text-sm"
-                    >
-                        <svg className="h-4 w-4" fill="#fed9bc" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                        </svg>
-                        Code
-                    </a>
-                )}                
-                {/* {demoLink && (
-                    <a 
-                        href={demoLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-[#fed9bc] hover:text-[#ef9c82] flex items-center gap-1 text-sm"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Live Demo
-                    </a>
-                )} */}
-            </div>
+export default function ProjectCard({ project, onClick }) {
+  const { name, description, image, technologies, githubLink } = project;
+
+  return (
+    <div
+      onClick={onClick}
+      style={{
+        background: "var(--bg)",
+        border: "1px solid var(--rule)",
+        borderRadius: 20,
+        padding: 28,
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+        cursor: "pointer",
+        height: "100%",
+        transition: "border-color 0.15s, box-shadow 0.15s",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--accent)";
+        e.currentTarget.style.boxShadow =
+          "0 8px 32px rgba(212,160,101,0.08)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--rule)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      {/* Image or hatch placeholder */}
+      <div
+        style={{
+          height: 140,
+          borderRadius: 12,
+          overflow: "hidden",
+          position: "relative",
+          border: "1px solid var(--rule)",
+          background: image
+            ? "transparent"
+            : `repeating-linear-gradient(135deg, var(--rule) 0 1px, transparent 1px 14px)`,
+          display: "grid",
+          placeItems: "center",
+        }}
+      >
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <span
+            style={{
+              fontSize: 11,
+              fontFamily: "var(--font-jetbrains-mono, monospace)",
+              color: "var(--muted)",
+              letterSpacing: "0.06em",
+            }}
+          >
+            {name.toLowerCase().replace(/\s/g, "-")}
+          </span>
+        )}
+      </div>
+
+      {/* Title */}
+      <h3
+        style={{
+          fontSize: "clamp(18px, 1.6vw, 22px)",
+          fontWeight: 500,
+          letterSpacing: "-0.015em",
+          margin: 0,
+          lineHeight: 1.2,
+          color: "var(--ink)",
+          fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
+        }}
+      >
+        {name}
+      </h3>
+
+      {/* Description */}
+      {description && (
+        <p
+          style={{
+            fontSize: 15,
+            lineHeight: 1.6,
+            color: "var(--muted)",
+            margin: 0,
+            fontFamily: "var(--font-newsreader, Georgia, serif)",
+            flex: 1,
+          }}
+        >
+          {description}
+        </p>
+      )}
+
+      {/* Tech pills */}
+      {technologies && technologies.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                background: "rgba(0,0,0,0.04)",
+                color: "var(--ink)",
+                padding: "4px 10px",
+                borderRadius: 999,
+                fontSize: 12,
+                fontWeight: 500,
+                border: "1px solid var(--rule)",
+                fontFamily:
+                  "var(--font-inter-tight, system-ui, sans-serif)",
+              }}
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-    )
-}
+      )}
 
-export default ProjectCard
+      {/* Footer link */}
+      {githubLink && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingTop: 4,
+            fontSize: 13,
+            fontFamily: "var(--font-jetbrains-mono, monospace)",
+          }}
+        >
+          <span style={{ color: "var(--muted)" }}>
+            {githubLink.replace("https://", "")}
+          </span>
+          <span style={{ color: "var(--ink)", fontWeight: 500 }}>
+            View code →
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
