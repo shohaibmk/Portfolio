@@ -4,7 +4,9 @@ import ProjectCard from "./projectCard.jsx";
 import { projects } from "../data/projects.js";
 
 const SectionLabel = ({ n, children }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+  <div
+    style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
+  >
     <span
       style={{
         fontFamily: "var(--font-jetbrains-mono, monospace)",
@@ -105,7 +107,7 @@ export default function Projects() {
               onClick={() =>
                 window.open(
                   project.githubLink || "https://github.com/shohaibmk",
-                  "_blank"
+                  "_blank",
                 )
               }
             />

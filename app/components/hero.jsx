@@ -173,7 +173,6 @@ export default function Hero() {
                 position: "relative",
                 flexShrink: 0,
               }}
-              className="hover:shadow-xl"
             >
               <Image
                 src={PROFILE_SRC}
