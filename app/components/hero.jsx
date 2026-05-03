@@ -2,11 +2,11 @@ import Image from "next/image";
 import { skills } from "../data/skills";
 
 const PROFILE_SRC =
-  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1769524693/medoq.jpg";
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1769524693/ShohaibMallickProfilePhoto.jpg";
 const RESUME_URL =
-  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1763652289/Shohaib_Mallick_Resume_sqq8og.pdf";
+  "https://res.cloudinary.com/dbqwc4btc/image/upload/v1777798048/ShohaibMallickResume.pdf";
 
-export default function Landing() {
+export default function Hero() {
   return (
     <section
       style={{ background: "var(--bg)" }}
@@ -41,7 +41,7 @@ export default function Landing() {
                   flexShrink: 0,
                 }}
               />
-              Open to Connect · 2026
+              Open to Connect
             </div>
 
             <h1
@@ -143,7 +143,7 @@ export default function Landing() {
 
           {/* Right: portrait */}
           <div className="hidden lg:flex justify-center">
-            <div
+            {/* <div
               style={{
                 width: 300,
                 height: 360,
@@ -153,6 +153,27 @@ export default function Landing() {
                 position: "relative",
                 flexShrink: 0,
               }}
+            >
+              <Image
+                src={PROFILE_SRC}
+                alt="Shohaib Mallick"
+                fill
+                sizes="(max-width: 1024px) 0px, 300px"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div> */}
+            <div
+              style={{
+                width: 360,
+                height: 360,
+                borderRadius: 180,
+                overflow: "hidden",
+                border: "1px solid var(--rule)",
+                position: "relative",
+                flexShrink: 0,
+              }}
+              className="hover:shadow-xl"
             >
               <Image
                 src={PROFILE_SRC}
