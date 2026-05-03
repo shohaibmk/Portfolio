@@ -1,5 +1,7 @@
 const SectionLabel = ({ n, children }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+  <div
+    style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
+  >
     <span
       style={{
         fontFamily: "var(--font-jetbrains-mono, monospace)",
@@ -34,7 +36,7 @@ const publications = [
     venue:
       "Grenze Int'l Journal of Engineering & Technology (GIJET) · 2021 · Vol 7 · Issue 2",
     summary:
-      "Patients describe symptoms by voice; the system transcribes them, extracts medical terms with NLP, and predicts disease with a Random Forest model — 93.55% accuracy across 41 diseases.",
+      "Patients describe symptoms by voice; the system transcribes them, extracts medical terms with NLP, and predicts disease with a Random Forest model at 93.55% accuracy across 41 diseases.",
     citationLink:
       "https://openurl.ebsco.com/EPDB%3Agcd%3A13%3A34765981/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A152542807&crl=c&link_origin=scholar.google.com",
     paperLink:
@@ -45,7 +47,7 @@ const publications = [
     venue:
       "Int'l Journal of Engineering Research & Technology (IJERT) · May 2020",
     summary:
-      "A speech-to-text pipeline combining MFCC feature extraction with deep neural nets — built for noisy, large-scale datasets where SVMs start to fall apart.",
+      "A speech-to-text pipeline combining MFCC feature extraction with deep neural networks built for noisy, large-scale datasets where SVMs start to fall apart.",
     citationLink:
       "https://www.ijert.org/proposed-model-of-speech-recognition-using-mfcc-and-dnn",
     paperLink:
@@ -162,8 +164,7 @@ export default function Research() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 6,
-                  fontFamily:
-                    "var(--font-inter-tight, system-ui, sans-serif)",
+                  fontFamily: "var(--font-inter-tight, system-ui, sans-serif)",
                 }}
               >
                 Read paper →

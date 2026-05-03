@@ -2,7 +2,9 @@
 import { useState } from "react";
 
 const SectionLabel = ({ n, children }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+  <div
+    style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
+  >
     <span
       style={{
         fontFamily: "var(--font-jetbrains-mono, monospace)",
@@ -62,7 +64,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const mailtoLink = `mailto:shohaibm99@gmail.com?subject=${encodeURIComponent(
-      formData.subject
+      formData.subject,
     )}&body=${encodeURIComponent(formData.message)}`;
     window.location.href = mailtoLink;
   };
@@ -107,7 +109,7 @@ export default function Contact() {
               }}
             >
               The fastest way to know if I'm a fit is a quick email or a
-              15-minute call. No prep, no slides — just a chat.
+              15-minute call. No prep, no slides, just a chat.
             </p>
             <div style={{ display: "grid", gap: 0, fontSize: 15 }}>
               {contactInfo.map(({ label, value }) => (
@@ -175,15 +177,13 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Senior fullstack role at —"
+                  placeholder="Fullstack Engineer role at <company>"
                   required
                   style={inputStyle}
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--accent)")
                   }
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "var(--rule)")
-                  }
+                  onBlur={(e) => (e.target.style.borderColor = "var(--rule)")}
                 />
               </div>
 
@@ -204,15 +204,13 @@ export default function Contact() {
                   rows={8}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder={`Hi Shohaib — we're hiring a fullstack engineer at <company>. The team is small, the codebase is React + Node + Postgres, and we'd love to chat about…`}
+                  placeholder={`Hi Shohaib, \nwe're hiring a fullstack engineer at <company>. The codebase is React + Node + Postgres, with the AI layer on FastAPI built with LangChain, and we'd love to chat about…`}
                   required
                   style={{ ...inputStyle, resize: "vertical", minHeight: 160 }}
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--accent)")
                   }
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "var(--rule)")
-                  }
+                  onBlur={(e) => (e.target.style.borderColor = "var(--rule)")}
                 />
               </div>
 
@@ -231,12 +229,8 @@ export default function Contact() {
                   marginTop: 4,
                   transition: "opacity 0.15s",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.opacity = "0.88")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.opacity = "1")
-                }
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
                 Send message →
               </button>

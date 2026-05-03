@@ -1,5 +1,7 @@
 const SectionLabel = ({ n, children }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+  <div
+    style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
+  >
     <span
       style={{
         fontFamily: "var(--font-jetbrains-mono, monospace)",
@@ -37,7 +39,7 @@ const experienceData = [
     location: "Pune, India",
     outcome: "Cut API response time by ~35% with Postgres + Redis caching",
     bullets: [
-      "Developed and integrated scalable APIs in Node.js (TypeScript), implementing Razorpay payment processor with webhooks for a subscription-based model — recurring billing went from \"sometimes works\" to reliable.",
+      "Developed and integrated scalable APIs in Node.js (TypeScript), implementing Razorpay payment processor with webhooks for a subscription-based model.",
       "Built an agentic RAG service (Python · FastAPI · LanceDB · Agno) so the product can actually read the web and remember what it learned.",
       "Integrated multiple LLM providers (OpenAI, Perplexity, and Grok) for dynamic chat completions, enhancing response diversity and reliability.",
       "Built responsive front-end interfaces with React (TypeScript) and Tailwind CSS, leveraging Zustand for efficient state management.",
@@ -53,8 +55,8 @@ const experienceData = [
     outcome: "Typo-tolerant search lifted discovery and cut bounce rate",
     bullets: [
       "Designed REST + GraphQL endpoints for a microservices backend aligned with platform reliability goals.",
-      "Stitched Postgres, MongoDB, and Redis together with proper failovers — integrated fault-tolerant data layers.",
-      "Set up real-time monitoring with OpenTelemetry + Grafana Loki — outages stopped being a guessing game.",
+      "Stitched Postgres, MongoDB, and Redis together with proper failovers and integrated fault-tolerant data layers.",
+      "Set up real-time monitoring with OpenTelemetry + Grafana Loki and outages stopped being a guessing game.",
       "Shipped OAuth2 / JWT auth and a GitLab CI/CD pipeline the team actually trusts.",
     ],
   },
